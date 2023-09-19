@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import NoteForm from "./components/NoteForm";
+import NoteList from "./components/NoteList";
+import { useState, useEffect, useRef } from "react";
+import "./styles/App.css";
+import styles from "./UI/myStyles.module.css";
 
 function App() {
+  const [notes, setNotes] = useState([
+    { body: "To clean my howse", id: "1" },
+    { body: "To watch a tutorial", id: "2" },
+  ]);
+
+  const createNewNote = (newNote) => {
+    setNotes([...notes, newNote]);
+  };
+
+  const deleteNote = (transferedNote) => {
+    setNotes(notes.filter((note) => note.id !== transferedNote.id));
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1 className={styles.h1}>This is your Note List</h1>
+      <NoteForm create={createNewNote} />
+      <NoteList notes={notes} deleteNote={deleteNote} />
     </div>
   );
 }
