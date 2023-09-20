@@ -1,14 +1,17 @@
 import NoteForm from "./components/NoteForm";
 import NoteList from "./components/NoteList";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import "./styles/App.css";
 import styles from "./UI/myStyles.module.css";
 
 function App() {
-  const [notes, setNotes] = useState([
-    { body: "To clean my howse", id: "1" },
-    { body: "To watch a tutorial", id: "2" },
-  ]);
+  const [notes, setNotes] = useState(
+    JSON.parse(localStorage.getItem("notes") || "[]")
+  );
+
+  useEffect(() => {
+    localStorage.setItem("notes", JSON.stringify(notes));
+  }, [notes]);
 
   const createNewNote = (newNote) => {
     setNotes([...notes, newNote]);

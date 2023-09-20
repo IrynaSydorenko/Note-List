@@ -1,10 +1,13 @@
 .h1 {
   padding-top: 10px;
-  color: #ff69b4;
-  font-family: monospace;
+  color: #d8bfd8;
+  font-family: "lucida console";
   display: flex;
   justify-content: center;
-  padding-bottom: 20px;
+  padding-bottom: 30px;
+  /* -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px gray; */
+  font-size: 40px;
 }
 .form {
   display: flex;
@@ -18,16 +21,21 @@
   font-family: monospace;
   border-radius: 20px;
   flex-basis: 50%;
-  border: 1px solid lightgray;
+  border: 1px solid #d8bfd8;
 }
 
 .button {
-  margin-right: 10px;
+  margin-right: 20px;
   border-radius: 10px;
   font-family: monospace;
-  padding: 10px;
-  border: 1px solid lightgray;
+  padding: 10px 20px;
+  border: 1px solid #d8bfd8;
   background-color: white;
+  /* cursor: pointer; */
+}
+
+.button:hover {
+  color: #b22222;
   cursor: pointer;
 }
 
@@ -41,30 +49,31 @@
 
 .deleteButton {
   margin-left: 10px;
-  background-color: white;
-  font-family: monospace;
-  padding: 5px;
+  background-color: #b22222;
+  font-family: copperplate;
+  padding: 2px 4px;
   box-sizing: border-box;
-  border: 1px solid lightgrey;
-  border-radius: 10px;
-  color: #b22222;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  color: white;
   cursor: pointer;
+  font-size: 17px;
 }
 
 .label {
-  margin-left: 10px;
+  margin-left: 20px;
   box-sizing: border-box;
-  border: solid lightgray 1px;
+  border: solid #d8bfd8 1px;
   border-radius: 10px;
   background-color: white;
-  padding: 10px;
+  padding: 10px 20px;
 }
 
 .li {
   display: flex;
   justify-content: center;
   padding: 10px;
-  font-size: large;
+  font-size: 20px;
   align-items: center;
 }
 

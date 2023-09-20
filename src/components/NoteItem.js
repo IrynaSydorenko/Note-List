@@ -7,7 +7,7 @@ function NoteItem({ note, number, deleteNote }) {
       <div className={style.id}>{number}.</div>
       <div>{`${note.body[0].toUpperCase()}${note.body.slice(1)}`}</div>
       <button className={style.deleteButton} onClick={() => deleteNote(note)}>
-        Delete
+        X
       </button>
     </div>
   );
