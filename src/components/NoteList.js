@@ -8,13 +8,12 @@ function NoteList({ notes, deleteNote }) {
       <ul className={style.unorderedNotesList}>
         {notes && notes.length > 0 ? (
           notes.map((note, index) => (
-            <li key={note.id}>
-              <NoteItem
-                note={note}
-                number={index + 1}
-                deleteNote={deleteNote}
-              />
-            </li>
+            <NoteItem
+              key={note.id}
+              note={note}
+              number={index + 1}
+              deleteNote={deleteNote}
+            />
           ))
         ) : notes.length === 0 ? (
           <li className={style.noNotes}>Add your notes</li>

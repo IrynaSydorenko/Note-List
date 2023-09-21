@@ -12,9 +12,26 @@ function App() {
   const [notesLoading, setNotesLoadding] = useState(false);
 
   useEffect(() => {
-    setNotesLoadding(true);
-    localStorage.setItem("notes", JSON.stringify(notes));
-    setNotesLoadding(false);
+    let setNotesTimeout;
+
+    const handleSetNotesPromise = async () => {
+      setNotesLoadding(true);
+
+      const promise = new Promise((resolve) => {
+        setNotesTimeout = setTimeout(() => {
+          localStorage.setItem("notes", JSON.stringify(notes));
+          resolve(true);
+        }, 1500);
+      });
+
+      await promise;
+
+      setNotesLoadding(false);
+    };
+
+    handleSetNotesPromise();
+
+    return () => clearTimeout(setNotesTimeout);
   }, [notes]);
 
   const createNewNote = (newNote) => {
@@ -29,7 +46,7 @@ function App() {
       <h1 className={styles.h1}>This is your Note List</h1>
       <NoteForm create={createNewNote} />
       {notesLoading ? (
-        <h2>Loadding...</h2>
+        <h2 className={styles.loading}>Loadding...</h2>
       ) : (
         <NoteList notes={notes} deleteNote={deleteNote} />
       )}
