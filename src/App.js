@@ -9,8 +9,12 @@ function App() {
     JSON.parse(localStorage.getItem("notes") || "[]")
   );
 
+  const [notesLoading, setNotesLoadding] = useState(false);
+
   useEffect(() => {
+    setNotesLoadding(true);
     localStorage.setItem("notes", JSON.stringify(notes));
+    setNotesLoadding(false);
   }, [notes]);
 
   const createNewNote = (newNote) => {
@@ -24,7 +28,11 @@ function App() {
     <div className="App">
       <h1 className={styles.h1}>This is your Note List</h1>
       <NoteForm create={createNewNote} />
-      <NoteList notes={notes} deleteNote={deleteNote} />
+      {notesLoading ? (
+        <h2>Loadding...</h2>
+      ) : (
+        <NoteList notes={notes} deleteNote={deleteNote} />
+      )}
     </div>
   );
 }

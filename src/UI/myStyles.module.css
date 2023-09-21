@@ -1,7 +1,7 @@
 .h1 {
   padding-top: 10px;
   color: #d8bfd8;
-  font-family: "lucida console";
+  font-family: monospace;
   display: flex;
   justify-content: center;
   padding-bottom: 30px;
@@ -22,6 +22,7 @@
   border-radius: 20px;
   flex-basis: 50%;
   border: 1px solid #d8bfd8;
+  outline: 1px solid transparent;
 }
 
 .button {
@@ -69,12 +70,26 @@
   padding: 10px 20px;
 }
 
+.unorderedNotesList {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  list-style: none;
+}
+
 .li {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   padding: 10px;
   font-size: 20px;
   align-items: center;
+  box-sizing: border-box;
+  border-radius: 15px;
+  border: #d8bfd8 1px solid;
+  margin-bottom: 10px;
+  min-width: 400px;
+  max-width: 500px;
+  flex-wrap: wrap;
 }
 
 .id {

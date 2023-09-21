@@ -5,7 +5,7 @@ import style from "../UI/myStyles.module.css";
 function NoteList({ notes, deleteNote }) {
   return (
     <div className={style.noteList}>
-      <ul>
+      <ul className={style.unorderedNotesList}>
         {notes && notes.length > 0 ? (
           notes.map((note, index) => (
             <li key={note.id}>
