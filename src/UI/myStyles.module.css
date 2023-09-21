@@ -115,3 +115,11 @@
   margin-top: 100px;
   font-weight: 800;
 }
+
+.error {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  color: #b22222;
+  font-family: "Courier New";
+}
