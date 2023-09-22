@@ -53,13 +53,13 @@
   margin-left: 10px;
   background-color: #b22222;
   font-family: copperplate;
-  padding: 2px 4px;
+  padding: 1px 4px;
   box-sizing: border-box;
   border: 1px solid transparent;
   border-radius: 3px;
   color: white;
   cursor: pointer;
-  font-size: 17px;
+  font-size: 20px;
 }
 
 .label {
@@ -80,8 +80,8 @@
 
 .li {
   display: flex;
-  justify-content: flex-start;
-  padding: 15px;
+  justify-content: space-between;
+  padding: 12px;
   font-size: 20px;
   align-items: center;
   box-sizing: border-box;
@@ -93,6 +93,7 @@
   flex-wrap: wrap;
   background-color: #fffafa;
   font-family: "Courier New";
+  width: 90%;
 }
 
 .id {
@@ -122,4 +123,23 @@
   margin-top: 100px;
   color: #b22222;
   font-family: "Courier New";
+}
+
+.numbersOfPage {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+.numberOfPage {
+  box-sizing: border-box;
+  border: solid #d8bfd8 1px;
+  margin-right: 1px;
+  padding: 5px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: white;
+}
+
+.noteNumberAndNote {
+  display: flex;
 }

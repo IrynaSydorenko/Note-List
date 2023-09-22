@@ -20,9 +20,10 @@ function NoteForm({ create }) {
         <input
           className={styles.input}
           type="text"
-          placeholder="Write your note here..."
+          placeholder="Write your note here...(up to 100 characters)"
           value={note.body}
           onChange={(e) => setNote({ ...note, body: e.target.value })}
+          maxLength={100}
         />
         <button className={styles.button} onClick={addNewNote}>
           Create a note
